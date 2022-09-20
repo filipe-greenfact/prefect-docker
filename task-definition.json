@@ -2,10 +2,7 @@
     "containerDefinitions": [
         {
             "name": "dataflowops",
-            "image": "994017026518.dkr.ecr.us-east-1.amazonaws.com/dataflowops:65c98c37859445edb25a9fb7c7e465b9c8ec0d8f",
-            "cpu": 0,
-            "links": [],
-            "portMappings": [],
+            "image": "994017026518.dkr.ecr.us-east-1.amazonaws.com/dataflowops",
             "essential": true,
             "entryPoint": [
                 "bash",
@@ -14,15 +11,6 @@
             "command": [
                 "prefect agent start -q dataflowops"
             ],
-            "environment": [
-                {
-                    "name": "PREFECT_LOGGING_LEVEL",
-                    "value": "DEBUG"
-                }
-            ],
-            "environmentFiles": [],
-            "mountPoints": [],
-            "volumesFrom": [],
             "secrets": [
                 {
                     "name": "PREFECT_API_URL",
@@ -33,78 +21,23 @@
                     "valueFrom": "arn:aws:ssm:us-east-1:994017026518:parameter/PREFECT_API_KEY"
                 }
             ],
-            "stopTimeout": 120,
-            "dnsServers": [],
-            "dnsSearchDomains": [],
-            "extraHosts": [],
-            "dockerSecurityOptions": [],
-            "dockerLabels": {},
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "dataflowops",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "dataflowops"
-                },
-                "secretOptions": []
-            },
-            "systemControls": []
+                }
+            }
         }
     ],
     "family": "dataflowops",
     "taskRoleArn": "arn:aws:iam::994017026518:role/dataflowops_ecs_task_role",
     "executionRoleArn": "arn:aws:iam::994017026518:role/dataflowops_ecs_execution_role",
     "networkMode": "awsvpc",
-    "revision": 1,
-    "volumes": [],
-    "status": "ACTIVE",
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.container-ordering"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "ecs.capability.secrets.ssm.environment-variables"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        }
-    ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2",
-        "FARGATE"
-    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
     "cpu": "512",
-    "memory": "1024",
-    "registeredAt": "2022-09-20T12:06:56.417Z",
-    "registeredBy": "arn:aws:iam::994017026518:user/filipe-data",
-    "tags": []
+    "memory": "1024"
 }
