@@ -10,7 +10,7 @@ env:
   PROJECT: dataflowops
   S3_BLOCK_NAME: prod
   PREFECT_VERSION: 2.*
-  ECS_CLUSTER: prefect2
+  ECS_CLUSTER: prefect
   ECS_TASK_DEFINITION: task-definition.json
 
 jobs:
